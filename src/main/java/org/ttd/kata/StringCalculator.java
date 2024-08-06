@@ -36,10 +36,11 @@ public class StringCalculator {
         int sum = 0;
         StringJoiner negativeNumbers = new StringJoiner(", ");
         for (String number : numberArray) {
-            if(Integer.parseInt(number) < 0) {
+            int num = Integer.parseInt(number);
+            if(num < 0) {
                 negativeNumbers.add(number);
             }
-            if(Integer.parseInt(number) < 1000){
+            if(num < 1000){
                 sum += Integer.parseInt(number);
             }
         }
