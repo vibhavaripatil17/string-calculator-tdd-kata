@@ -60,4 +60,14 @@ public class StringCalculatorTest {
             assertEquals("Negative numbers not allowed: -2, -4, -8", e.getMessage());
         }
     }
+
+    @Test
+    void testWithCustomedDelimiter() {
+        assertEquals(6, stringCalculator.add("//[***]\\n1***2***3"));
+    }
+
+    @Test
+    void testWithCustomedDelimiterWithCharacters() {
+        assertEquals(18, stringCalculator.add("//mar\\n17dec1"));
+    }
 }
