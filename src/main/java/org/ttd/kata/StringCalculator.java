@@ -39,7 +39,9 @@ public class StringCalculator {
             if(Integer.parseInt(number) < 0) {
                 negativeNumbers.add(number);
             }
-            sum += Integer.parseInt(number);
+            if(Integer.parseInt(number) < 1000){
+                sum += Integer.parseInt(number);
+            }
         }
         if(negativeNumbers.length() > 0){
             throw new IllegalArgumentException("Negative numbers not allowed" + ": " + negativeNumbers.toString());

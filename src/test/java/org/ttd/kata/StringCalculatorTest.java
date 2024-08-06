@@ -38,6 +38,7 @@ public class StringCalculatorTest {
     @Test
     void testAddMultipleNumbers() {
         assertEquals(25, stringCalculator.add("1,2,3,4,15"));
+        assertEquals(467, stringCalculator.add("1.1,2,3,4.456"));
     }
 
 
@@ -69,5 +70,12 @@ public class StringCalculatorTest {
     @Test
     void testWithCustomedDelimiterWithCharacters() {
         assertEquals(18, stringCalculator.add("//mar\\n17dec1"));
+    }
+
+    @Test
+    void testIgnoreNumbersGreaterThanOrEqualsTo1000() {
+        assertEquals(2, stringCalculator.add("2,1701"));
+        assertEquals(2, stringCalculator.add("1000,2"));
+        assertEquals(222, stringCalculator.add("1111,222"));
     }
 }
